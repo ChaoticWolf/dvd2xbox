@@ -442,16 +442,6 @@
 					</FileConfiguration>
 				</File>
 			</Filter>
-			<Filter
-				Name="virtualMemory"
-				Filter="">
-				<File
-					RelativePath=".\xbox\stepmania\VirtualMemory.cpp">
-				</File>
-				<File
-					RelativePath=".\xbox\stepmania\VirtualMemory.h">
-				</File>
-			</Filter>
 		</Filter>
 		<Filter
 			Name="XBMP/XBMC"
