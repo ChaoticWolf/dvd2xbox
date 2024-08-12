@@ -20,7 +20,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="lib\libdvdread\;&quot;libsmb++\src&quot;;xbox\XKUtils;&quot;cfl-0.8.0\src&quot;;xbox;..\Common\include;lib\libogg\"
+				AdditionalIncludeDirectories="lib\libdvdread\;&quot;libsmb++\src&quot;;xbox\XKUtils;&quot;cfl-0.8.0\src&quot;;xbox;C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\include;lib\libogg\"
 				PreprocessorDefinitions="_DEBUG;_XBOX;_WITHENC;WIN32;USE_DVDREAD;HAVE_INTTYPES_H"
 				MinimalRebuild="TRUE"
 				ExceptionHandling="TRUE"
@@ -84,7 +84,7 @@
 				InlineFunctionExpansion="1"
 				OmitFramePointers="TRUE"
 				OptimizeForProcessor="2"
-				AdditionalIncludeDirectories="xbox\XKUtils;&quot;libcdio-0.62\include&quot;;lib\libdvdread\;&quot;libsmb++\src&quot;;&quot;cfl-0.8.0\src&quot;;xbox;..\Common\include;lib\libogg\;&quot;lib\libxml2\libxml2-2.6.13\include&quot;"
+				AdditionalIncludeDirectories="xbox\XKUtils;&quot;libcdio-0.62\include&quot;;lib\libdvdread\;&quot;libsmb++\src&quot;;&quot;cfl-0.8.0\src&quot;;xbox;C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\include;lib\libogg\;&quot;lib\libxml2\libxml2-2.6.13\include&quot;"
 				PreprocessorDefinitions="NDEBUG;_XBOX;_WITHENC;WIN32;USE_DVDREAD;HAVE_INTTYPES_H"
 				StringPooling="FALSE"
 				RuntimeLibrary="0"
@@ -357,31 +357,31 @@
 					RelativePath=".\xbox\xbfontEx.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbhelp.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbhelp.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbinput.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbinput.cpp">
 				</File>
 				<File
 					RelativePath="xbox\XBInputEx.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbmesh.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbmesh.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbNet.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbNet.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbresource.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbresource.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbsocket.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbsocket.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbstopwatch.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbstopwatch.cpp">
 				</File>
 				<File
-					RelativePath="..\Common\Src\xbutil.cpp">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Src\xbutil.cpp">
 				</File>
 			</Filter>
 			<Filter
@@ -394,31 +394,31 @@
 					RelativePath=".\xbox\xbfontEx.h">
 				</File>
 				<File
-					RelativePath="F:\Programme\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbhelp.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbhelp.h">
 				</File>
 				<File
-					RelativePath="F:\Programme\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbinput.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbinput.h">
 				</File>
 				<File
 					RelativePath="xbox\XBInputEx.h">
 				</File>
 				<File
-					RelativePath="F:\Programme\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbmesh.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbmesh.h">
 				</File>
 				<File
-					RelativePath="..\Common\Include\xbNet.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbNet.h">
 				</File>
 				<File
-					RelativePath="F:\Programme\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbresource.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbresource.h">
 				</File>
 				<File
-					RelativePath="..\Common\Include\xbsocket.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbsocket.h">
 				</File>
 				<File
-					RelativePath="..\Common\Include\xbstopwatch.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbstopwatch.h">
 				</File>
 				<File
-					RelativePath="..\Common\Include\xbutil.h">
+					RelativePath="C:\Program Files\Microsoft Xbox SDK\Samples\Xbox\Common\Include\xbutil.h">
 				</File>
 			</Filter>
 			<Filter
