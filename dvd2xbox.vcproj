@@ -68,7 +68,7 @@
 				NoLibWarn="TRUE"
 				TitleID="0x0FACFAC0"
 				MediaTypes="0x80000007"
-				TitleName="dvd2xbox"
+				TitleName="DVD2Xbox"
 				TitleImage="$(ProjectDir)title.xbx"/>
 		</Configuration>
 		<Configuration
