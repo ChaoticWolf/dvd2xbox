@@ -30,57 +30,57 @@ D2Xguiset::~D2Xguiset()
 void D2Xguiset::BuildMenu()
 {
 	AddMenu(SET_GENERAL,"General",true);
-	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"no");
-	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"yes");
-	AddString(SET_GENERAL,2,"Enable F: Partition",false,0,"no");
-	AddString(SET_GENERAL,2,"Enable F: Partition",false,0,"yes");
-	AddString(SET_GENERAL,3,"Enable G: Partition",false,0,"no");
-	AddString(SET_GENERAL,3,"Enable G: Partition",false,0,"yes");
-	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"no");
-	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"yes");
-	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"no");
-	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"yes");
-	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"no");
-	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"yes");
-	AddString(SET_GENERAL,7,"Enable Autoeject",true,1,"no");
-	AddString(SET_GENERAL,7,"Enable Autoeject",true,1,"yes");
-	AddString(SET_GENERAL,8,"Enable LED control",true,0,"no");
-	AddString(SET_GENERAL,8,"Enable LED control",true,0,"yes");	
-	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"off");
+	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"No");
+	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"Yes");
+	AddString(SET_GENERAL,2,"Enable F: Partition",false,0,"No");
+	AddString(SET_GENERAL,2,"Enable F: Partition",false,0,"Yes");
+	AddString(SET_GENERAL,3,"Enable G: Partition",false,0,"No");
+	AddString(SET_GENERAL,3,"Enable G: Partition",false,0,"Yes");
+	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"No");
+	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"Yes");
+	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"No");
+	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"Yes");
+	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"No");
+	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"Yes");
+	AddString(SET_GENERAL,7,"Enable Auto eject",true,1,"No");
+	AddString(SET_GENERAL,7,"Enable Auto eject",true,1,"Yes");
+	AddString(SET_GENERAL,8,"Enable LED control",true,0,"No");
+	AddString(SET_GENERAL,8,"Enable LED control",true,0,"Yes");	
+	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"Off");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"1 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"2 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"3 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"4 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"5 min");
-	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"no");
-	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"yes");
+	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"No");
+	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"Yes");
 	AddInt(SET_GENERAL,11,"Failed Copy Retries",true,3,0,20,1);
 	AddInt(SET_GENERAL,12,"Copy Read Retries",true,3,0,20,1);
-	AddString(SET_GENERAL,13,"Blank video files",true,0,"no");
-	AddString(SET_GENERAL,13,"Blank video files",true,0,"yes");
-	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"no");
-	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"yes");
-	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"no");
-	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"yes");
-	AddString(SET_GENERAL,16,"AutoShutdown after copy",true,0,"no");
-	AddString(SET_GENERAL,16,"AutoShutdown after copy",true,0,"yes");
+	AddString(SET_GENERAL,13,"Blank video files",true,0,"No");
+	AddString(SET_GENERAL,13,"Blank video files",true,0,"Yes");
+	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"No");
+	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"Yes");
+	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"No");
+	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"Yes");
+	AddString(SET_GENERAL,16,"Auto shutdown after copy",true,0,"No");
+	AddString(SET_GENERAL,16,"Auto shutdown after copy",true,0,"Yes");
 
 	AddMenu(SET_AUDIO,"Audio",true);
 	AddString(SET_AUDIO,1,"Encoder",true,0,"MP3");
 	AddString(SET_AUDIO,1,"Encoder",true,0,"OggVorbis");
 	AddString(SET_AUDIO,1,"Encoder",true,0,"WAV");
-	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"low");
-	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"medium");
-	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"high");
+	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"Low");
+	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"Medium");
+	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"High");
 	AddString(SET_AUDIO,3,"Mode",true,0,"Stereo");
 	AddString(SET_AUDIO,3,"Mode",true,0,"Joint Stereo");
 	AddInt(SET_AUDIO,4,"Bitrate",true,192,64,384,64);
 
 	AddMenu(SET_LCD,"LCD",true);
-	AddString(SET_LCD,1,"Enable LCD",true,0,"no");
-	AddString(SET_LCD,1,"Enable LCD",true,0,"yes");
+	AddString(SET_LCD,1,"Enable LCD",true,0,"No");
+	AddString(SET_LCD,1,"Enable LCD",true,0,"Yes");
 	AddString(SET_LCD,2,"Modchip",true,0,"SmartXX");
-	AddString(SET_LCD,2,"Modchip",true,0,"Xexuter3");
+	AddString(SET_LCD,2,"Modchip",true,0,"Xecuter 3");
 	AddString(SET_LCD,2,"Modchip",true,0,"Xenium");
 	AddString(SET_LCD,3,"Type",true,0,"LCD-KS0073");
 	AddString(SET_LCD,3,"Type",true,0,"LCD-HD44780");
@@ -93,24 +93,24 @@ void D2Xguiset::BuildMenu()
 	AddHex(SET_LCD,9,"Line4 Address",true,84,0,252,4);
 	AddInt(SET_LCD,10,"Backlight",true,80,1,100,1);
 	AddInt(SET_LCD,11,"Contrast",true,80,1,100,1);
-	AddString(SET_LCD,12,"Enable Scrolling",true,1,"no");
-	AddString(SET_LCD,12,"Enable Scrolling",true,1,"yes");
+	AddString(SET_LCD,12,"Enable Scrolling",true,1,"No");
+	AddString(SET_LCD,12,"Enable Scrolling",true,1,"Yes");
 
 
 	if(p_utils.IsEthernetConnected() == true)
 	{
 		AddMenu(SET_NETWORK,"Network",true);
-		AddString(SET_NETWORK,1,"Enable Network",true,0,"no");
-		AddString(SET_NETWORK,1,"Enable Network",true,0,"yes");
-		AddString(SET_NETWORK,2,"Network mode",true,0,"dash");
-		AddString(SET_NETWORK,2,"Network mode",true,0,"DHCP");
-		AddString(SET_NETWORK,2,"Network mode",true,0,"static");
-		AddString(SET_NETWORK,3,"Enable FTP Server",false,0,"no");
-		AddString(SET_NETWORK,3,"Enable FTP Server",false,0,"yes");
-		AddString(SET_NETWORK,4,"Enable xbox autodetection",true,0,"no");
-		AddString(SET_NETWORK,4,"Enable xbox autodetection",true,0,"yes");
-		AddString(SET_NETWORK,5,"Send username/password",true,1,"no");
-		AddString(SET_NETWORK,5,"Send username/password",true,1,"yes");
+		AddString(SET_NETWORK,1,"Enable Network",true,0,"No");
+		AddString(SET_NETWORK,1,"Enable Network",true,0,"Yes");
+		AddString(SET_NETWORK,2,"Network Mode",true,0,"Dashboard");
+		AddString(SET_NETWORK,2,"Network Mode",true,0,"DHCP");
+		AddString(SET_NETWORK,2,"Network Mode",true,0,"Static");
+		AddString(SET_NETWORK,3,"Enable FTP Server",false,0,"No");
+		AddString(SET_NETWORK,3,"Enable FTP Server",false,0,"Yes");
+		AddString(SET_NETWORK,4,"Enable Xbox autodetection",true,0,"No");
+		AddString(SET_NETWORK,4,"Enable Xbox autodetection",true,0,"Yes");
+		AddString(SET_NETWORK,5,"Send Username/Password",true,1,"No");
+		AddString(SET_NETWORK,5,"Send Username/Password",true,1,"Yes");
 	}
 	else
 		AddMenu(SET_NETWORK,"Network",false);
@@ -129,8 +129,8 @@ void D2Xguiset::BuildMenu()
 
 	//AddMenu(SET_CALIBRATE,"Calibrate Screen",true);
 	AddMenu(SET_GUI,"GUI",true);
-	AddString(SET_GUI,1,"Enable Soften Filter",true,0,"no");
-	AddString(SET_GUI,1,"Enable Soften Filter",true,0,"yes");
+	AddString(SET_GUI,1,"Enable Soften Filter",true,0,"No");
+	AddString(SET_GUI,1,"Enable Soften Filter",true,0,"Yes");
 	AddInt(SET_GUI,2,"Set Flicker Filter",true,5,0,5,1);
 	AddString(SET_GUI,3,"Calibrate Screen",true,0," ");
 	

@@ -23,9 +23,9 @@ D2XGM::D2XGM()
 
 	gm_options.insert(pair<int,string>(0,"Do nothing"));
 	gm_options.insert(pair<int,string>(1,"Rescan HDD"));
-	gm_options.insert(pair<int,string>(2,"Delete Gamesaves"));
+	gm_options.insert(pair<int,string>(2,"Delete Game Saves"));
 	gm_options.insert(pair<int,string>(3,"Delete Game"));
-	gm_options.insert(pair<int,string>(4,"Delete Game & Gamesaves"));
+	gm_options.insert(pair<int,string>(4,"Delete Game & Game Saves"));
 }
 
 D2XGM::~D2XGM()

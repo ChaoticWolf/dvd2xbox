@@ -248,7 +248,7 @@ CXBoxSample::CXBoxSample()
 	p_fcopy = NULL;
 	p_rgb = NULL;
 	ScreenSaverActive = false;
-	wcscpy(g_d2xSettings.localIP,L"no network");
+	wcscpy(g_d2xSettings.localIP,L"No network");
 	wcscpy(driveState,L"UNKNOWN");
 	dialog_active = false;
 
@@ -295,7 +295,7 @@ HRESULT CXBoxSample::Initialize()
 	m_pd3dDevice->Present(NULL,NULL,NULL,NULL);
 
 	// read config files
-	WriteText("Loading configs");
+	WriteText("Loading configs...");
 
 	p_gset->LoadConfig();
 	 
@@ -303,7 +303,7 @@ HRESULT CXBoxSample::Initialize()
 	{
 		if(g_d2xSettings.autodetectHDD)
 		{
-			WriteText("Checking partitions");
+			WriteText("Checking partitions...");
 			OutputDebugString("Checking for available partitions\n");
 			p_gset->CheckingPartitions();
 		}
@@ -369,15 +369,15 @@ HRESULT CXBoxSample::Initialize()
 			switch(g_d2xSettings.network_assignment)
 			{
 				case NETWORK_DASH:
-					WriteText("Init network using dash settings...");
+					WriteText("Starting network using dashboard settings...");
 					g_network.Initialize(NETWORK_DASH, "","","","");
 					break;
 				case NETWORK_DHCP:
-					WriteText("Init network using DHCP...");
+					WriteText("Starting network using DHCP...");
 					g_network.Initialize(NETWORK_DHCP, "","","","");
 					break;
 				default:
-					WriteText("Init network using static ip...");
+					WriteText("Starting network using Static IP...");
 					g_network.Initialize(NETWORK_STATIC,g_d2xSettings.xboxIP,
 														g_d2xSettings.netmask,
 														g_d2xSettings.gateway,
@@ -389,12 +389,12 @@ HRESULT CXBoxSample::Initialize()
 			if( g_network.WaitForSetup( 5000 ) )
 			{
 				DebugOut(" - network fully setup");
-				WriteText("Starting network ok"); 
+				WriteText("Network started"); 
 				getlocalIP();
 
 				if(g_d2xSettings.ftpd_enabled)
 				{
-					WriteText("Starting ftp server");
+					WriteText("Starting FTP server...");
 					StartFTPd();
 				}
 				if(g_d2xSettings.autodetect_enabled)
@@ -414,7 +414,7 @@ HRESULT CXBoxSample::Initialize()
 	//InitMemoryUnits();
 
 	// Remap the CDROM, map E & F Drives
-	WriteText("Mapping drives");
+	WriteText("Mapping drives...");
 	D2Xutils::mapDrives(drives);
 
 
@@ -436,7 +436,7 @@ HRESULT CXBoxSample::Initialize()
 	// init menus
 	ftpmenu.insert(pair<int,string>(0,"Connect"));
 	ftpmenu.insert(pair<int,string>(1,"IP:"));
-	ftpmenu.insert(pair<int,string>(2,"User:"));
+	ftpmenu.insert(pair<int,string>(2,"Username:"));
 	ftpmenu.insert(pair<int,string>(3,"Password:"));
 
 	ftpatt.insert(pair<int,string>(0,"Connect"));
@@ -444,12 +444,12 @@ HRESULT CXBoxSample::Initialize()
 	ftpatt.insert(pair<int,string>(2,g_d2xSettings.ftpuser));
 	ftpatt.insert(pair<int,string>(3,g_d2xSettings.ftppwd));
 
-	str_mainmenu.insert(pair<int,string>(0,"Copy DVD/CD-R to HDD"));
+	str_mainmenu.insert(pair<int,string>(0,"Copy DVD/CD to HDD"));
 	str_mainmenu.insert(pair<int,string>(1,"Game Manager"));
-	str_mainmenu.insert(pair<int,string>(2,"Copy DVD/CD-R to SMB share"));
-	str_mainmenu.insert(pair<int,string>(3,"Filemanager"));
+	str_mainmenu.insert(pair<int,string>(2,"Copy DVD/CD to SMB share"));
+	str_mainmenu.insert(pair<int,string>(3,"File Manager"));
 	str_mainmenu.insert(pair<int,string>(4,"Settings"));
-	str_mainmenu.insert(pair<int,string>(5,"Boot to dash"));
+	str_mainmenu.insert(pair<int,string>(5,"Exit to Dashboard"));
 
 	str_actionmenu.insert(pair<int,string>(0,"Copy file/dir"));
 	str_actionmenu.insert(pair<int,string>(1,"Delete file/dir"));
@@ -462,7 +462,7 @@ HRESULT CXBoxSample::Initialize()
 	str_actionmenu.insert(pair<int,string>(7,"View textfile"));
 	str_actionmenu.insert(pair<int,string>(8,"xbe info"));
 
-	str_shutmenu.insert(pair<int,string>(0,"Shutdown"));
+	str_shutmenu.insert(pair<int,string>(0,"Shut down"));
 	str_shutmenu.insert(pair<int,string>(1,"Reboot"));
 	str_shutmenu.insert(pair<int,string>(2,"Open/Close Tray"));
 	str_shutmenu.insert(pair<int,string>(3,"Launch Game Disc"));
@@ -2851,7 +2851,7 @@ HRESULT CXBoxSample::Render()
 		else
 			strlcd2 = "Press A to proceed";
 
-		strlcd1 = "Welcome to dvd2xbox";
+		strlcd1 = "Welcome to DVD2Xbox";
 		strlcd3 = driveState;
 		strlcd4.Format("Time: %2.2d:%2.2d:%2.2d",sltime.wHour,sltime.wMinute,sltime.wSecond);
 
@@ -3058,7 +3058,7 @@ HRESULT CXBoxSample::Render()
 		//p_gui->SetKeyValue("statusline",driveState);
 
 
-		strlcd1 = "Filemanager";
+		strlcd1 = "File Manager";
 
 		
 
@@ -3308,7 +3308,7 @@ HRESULT CXBoxSample::Render()
 		if(g_d2xSettings.m_bLCDUsed == true)
 		{
 			CStdString strtext;
-			strlcd1 = "1: dvd2xbox settings";
+			strlcd1 = "1: DVD2Xbox settings";
 			p_util->GetDVDModel(strtext);
 			strlcd2.Format("2: DVD: %s",strtext.c_str());
 			p_util->GetHDDModel(strtext);
@@ -3345,7 +3345,7 @@ HRESULT CXBoxSample::Render()
 			case NO_DVD2XBOX_XMLFILE:
 				p_gui->SetShowIDs(100);
 				strlcd1 = "Couldn't find dvd2xbox.xml.";
-				strlcd2 = "Please copy it in your dvd2xbox directory";
+				strlcd2 = "Please copy it in your DVD2Xbox directory";
 				strlcd3 = "and reboot.";
 				break;
 			default:
@@ -3447,7 +3447,7 @@ void CXBoxSample::StartFTPd()
 	m_pFileZilla->mSettings.SetCustomPasvIP("192.168.1.1");
 	m_pFileZilla->mSettings.SetCustomPasvMinPort(1);
 	m_pFileZilla->mSettings.SetCustomPasvMaxPort(65535);*/
-	m_pFileZilla->mSettings.SetWelcomeMessage("Welcome to the dvd2xbox ftp server.");
+	m_pFileZilla->mSettings.SetWelcomeMessage("Welcome to the DVD2Xbox FTP server.");
 	CXFUser* pUser;
 	m_pFileZilla->AddUser(g_d2xSettings.ftpduser, pUser);
 	pUser->SetPassword(g_d2xSettings.ftpd_pwd);
