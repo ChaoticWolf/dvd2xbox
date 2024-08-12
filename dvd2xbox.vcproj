@@ -122,7 +122,7 @@
 			<Tool
 				Name="XboxDeploymentTool"
 				ExcludedFromBuild="FALSE"
-				RemotePath="xf:\$(SolutionName)\default.xbe"/>
+				RemotePath="xe:\$(SolutionName)\default.xbe"/>
 			<Tool
 				Name="XboxImageTool"
 				FileName="$(TargetDir)default.xbe"
