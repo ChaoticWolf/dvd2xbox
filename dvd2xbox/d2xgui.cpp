@@ -639,7 +639,7 @@ void D2Xgui::RenderGUI(int id)
 		p_ml->RenderTexture2("calibration_background",0,0,SCREEN_WIDTH,SCREEN_HEIGHT, true);
 		p_graph.DrawRect(60,190,580,300,0XA0000000,0XA0000000, true);
 		p_ml->DrawText("D2XDefaultFont",140,200,0xFFFFFFFF,"Use the dpad to calibrate the screen",XBFONT_TRUNCATED, D2XFONT_LEFT, SCREEN_WIDTH,false);
-		p_ml->DrawText("D2XDefaultFont",140,220,0xFFFFFFFF,"A Button to switch sides",XBFONT_TRUNCATED, D2XFONT_LEFT, SCREEN_WIDTH,false);
+		p_ml->DrawText("D2XDefaultFont",140,220,0xFFFFFFFF,"Press the A button to switch sides",XBFONT_TRUNCATED, D2XFONT_LEFT, SCREEN_WIDTH,false);
 		p_ml->DrawText("D2XDefaultFont",140,240,0xFFFFFFFF,strText,XBFONT_TRUNCATED, D2XFONT_LEFT, SCREEN_WIDTH,false);
 		strText.Format("x1 = %3.f; y1 = %3.f; x2 = %3.f; y2 = %3.f",s_cal.x1,s_cal.y1,s_cal.x2,s_cal.y2);
 		p_ml->DrawText("D2XDefaultFont",140,260,0xFFFFFFFF,strText,XBFONT_TRUNCATED, D2XFONT_LEFT, SCREEN_WIDTH,false);

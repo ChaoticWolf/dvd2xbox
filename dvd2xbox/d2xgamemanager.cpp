@@ -21,11 +21,11 @@ D2XGM::D2XGM()
 
 	showlines = 14;
 
-	gm_options.insert(pair<int,string>(0,"Do nothing"));
-	gm_options.insert(pair<int,string>(1,"Rescan HDD"));
-	gm_options.insert(pair<int,string>(2,"Delete Game Saves"));
-	gm_options.insert(pair<int,string>(3,"Delete Game"));
-	gm_options.insert(pair<int,string>(4,"Delete Game & Game Saves"));
+	gm_options.insert(pair<int,string>(0,"Rescan HDD"));
+	gm_options.insert(pair<int,string>(1,"Delete Game Saves"));
+	gm_options.insert(pair<int,string>(2,"Delete Game"));
+	gm_options.insert(pair<int,string>(3,"Delete Game & Game Saves"));
+	gm_options.insert(pair<int,string>(4,"Cancel"));
 }
 
 D2XGM::~D2XGM()
@@ -551,19 +551,19 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 		if(p_input->pressed(GP_A)|| p_input->pressed(IR_SELECT))
 		{
 			if(sinfo.item_nr == 0)
-				gm_mode = MODE_SHOWLIST;
-			else if(sinfo.item_nr == 1)
 			{
 				DeleteStats();
 				ret = PROCESS_RESCAN;
 				gm_mode = PROCESS_RESCAN;
 			}
-			else if(sinfo.item_nr == 2)
+			else if(sinfo.item_nr == 1)
 				gm_mode = MODE_DELETE_SAVES;
-			else if(sinfo.item_nr == 3)
+			else if(sinfo.item_nr == 2)
 				gm_mode = MODE_DELETE_GAME;
-			else if(sinfo.item_nr == 4)
+			else if(sinfo.item_nr == 3)
 				gm_mode = MODE_DELETE_GAMESAVES;
+			else if(sinfo.item_nr == 4)
+				gm_mode = MODE_SHOWLIST;
 
 		}
 		else if(p_input->pressed(GP_BACK))
