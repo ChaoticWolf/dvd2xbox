@@ -96,6 +96,7 @@ void D2Xdstatus::GetDriveState()
 				LeaveCriticalSection(&m_criticalSection);
 				D2XSmartXXRGB::SetLastRGBStatus();
 				if(!type)
+					wcscpy(m_scdstat,L"DVD: Reading...");
 					//DetectMedia(m_scdstat,type);
 					DetectMedia();
 
@@ -259,7 +260,7 @@ void D2Xdstatus::DetectMedia()
 		else
 		{
 			ttype = UNKNOWN_;
-			wsprintfW(temp,L"DVD: unknown");
+			wsprintfW(temp,L"DVD: Unknown");
 		}
 	}
 	EnterCriticalSection(&m_criticalSection);
