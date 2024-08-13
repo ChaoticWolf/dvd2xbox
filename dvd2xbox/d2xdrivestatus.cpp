@@ -12,7 +12,7 @@ D2Xdstatus::D2Xdstatus()
 	m_dwLastTrayState=0;
 	m_pCdInfo = NULL;
 	type = 0;
-	wsprintfW(m_scdstat,L"DVD: unknown");
+	wsprintfW(m_scdstat,L"DVD: Unknown");
 	mediaReady = 0;
 	p_ml = D2Xmedialib::Instance();
 	InitializeCriticalSection(&m_criticalSection);
@@ -186,7 +186,7 @@ void D2Xdstatus::DetectMedia()
 		g_d2xSettings.detected_media = GAME;
 		p_ml->LoadXBEIcon("D:\\default.xbe","DVDxbeIcon");
 		dvdsize = countMB("D:\\");
-		wsprintfW(temp,L"DVD: XBOX Software %d MB",(int)dvdsize);
+		wsprintfW(temp,L"DVD: XBOX Software (%d MB)",(int)dvdsize);
 	} 
 	else if(_access("D:\\VIDEO_TS",00)!=-1)
 	{
@@ -200,7 +200,7 @@ void D2Xdstatus::DetectMedia()
 			p_file->FileClose();
 		delete p_file;
 		p_file = NULL;
-		wsprintfW(temp,L"DVD: Video %d MB",(int)dvdsize);
+		wsprintfW(temp,L"DVD: Video (%d MB)",(int)dvdsize);
 	} 
 	else 
 	{
@@ -222,21 +222,21 @@ void D2Xdstatus::DetectMedia()
 				ttype = VCD;
 				g_d2xSettings.detected_media = VCD;
 				dvdsize = m_pCdInfo->GetIsoSize(1)*M2F2_SECTOR_SIZE/(1024*1024);
-				wsprintfW(temp,L"DVD: VCD %d MB",(int)dvdsize);
+				wsprintfW(temp,L"DVD: VCD (%d MB)",(int)dvdsize);
 				p_file->FileClose();
 			} else if(p_file->FileOpenRead("\\SVCD\\ENTRIES.SVD"))
 			{
 				ttype = SVCD;
 				g_d2xSettings.detected_media = SVCD;
 				dvdsize = m_pCdInfo->GetIsoSize(1)*M2F2_SECTOR_SIZE/(1024*1024);
-				wsprintfW(temp,L"DVD: SVCD %d MB",(int)dvdsize);
+				wsprintfW(temp,L"DVD: SVCD (%d MB)",(int)dvdsize);
 				p_file->FileClose();
  			} else 
 			{
 				ttype = ISO;
 				g_d2xSettings.detected_media = ISO;
 				dvdsize = m_pCdInfo->GetIsoSize(1)*CDIO_CD_FRAMESIZE/(1024*1024);
-				wsprintfW(temp,L"DVD: ISO %d MB",(int)dvdsize);
+				wsprintfW(temp,L"DVD: ISO (%d MB)",(int)dvdsize);
 			
 			}
 			delete p_file;
@@ -247,7 +247,7 @@ void D2Xdstatus::DetectMedia()
 			ttype = UDF;
 			g_d2xSettings.detected_media = UDF;
 			dvdsize = countMB("D:\\");
-			wsprintfW(temp,L"DVD: UDF %d MB",(int)dvdsize);
+			wsprintfW(temp,L"DVD: UDF (%d MB)",(int)dvdsize);
 		} 
 		else if(m_pCdInfo->IsAudio( 1 )) 
 		{
