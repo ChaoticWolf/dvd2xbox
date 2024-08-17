@@ -59,7 +59,10 @@ void D2Xutils::mapDrives(map<int,string>& drives)
 
 	drives.clear();
 	drives.insert(pair<int,string>(y++,"c:\\"));
-	drives.insert(pair<int,string>(y++,"d:\\"));
+	if (g_d2xSettings.detected_media != CDDA)
+	{
+		drives.insert(pair<int,string>(y++,"d:\\"));
+	}
 	drives.insert(pair<int,string>(y++,"e:\\"));
 
 	if(g_d2xSettings.useF)
