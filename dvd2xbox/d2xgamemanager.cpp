@@ -541,7 +541,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 			global_freeMB.isizeMB = p_utils.getfreeDiskspaceMB(drive);
 			global_freeMB.isizeMB = (global_freeMB.isizeMB > 0) ? global_freeMB.isizeMB : 0;
 		}
-		if(p_input->pressed(GP_BACK) || p_input->pressed(IR_BACK))
+		if(p_input->pressed(GP_BACK) || p_input->pressed(IR_BACK) || p_input->pressed(GP_B))
 			ret = PROCESS_BACK;
 
 	}
@@ -566,7 +566,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 				gm_mode = MODE_SHOWLIST;
 
 		}
-		else if(p_input->pressed(GP_BACK))
+		else if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B))
 		{
 			gm_mode = MODE_SHOWLIST;
 			if(p_swin != NULL)
@@ -582,7 +582,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 		{
 			gm_mode = MODE_DELETE_SAVES_PROGRESS;
 		}
-		else if(p_input->pressed(GP_BACK))
+		else if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B))
 			gm_mode = MODE_SHOWLIST;
 	}
 	else if(gm_mode == MODE_DELETE_GAME)
@@ -591,7 +591,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 		{
 			gm_mode = MODE_DELETE_GAME_PROGRESS;
 		}
-		else if(p_input->pressed(GP_BACK))
+		else if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B))
 			gm_mode = MODE_SHOWLIST;
 	}
 	else if(gm_mode == MODE_DELETE_GAMESAVES)
@@ -600,7 +600,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 		{
 			gm_mode = MODE_DELETE_GAMESAVES_PROGRESS;
 		}
-		else if(p_input->pressed(GP_BACK))
+		else if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B))
 			gm_mode = MODE_SHOWLIST;
 	}
 	else if(gm_mode == MODE_DELETE_SAVES_PROGRESS)
@@ -633,7 +633,7 @@ int D2XGM::ProcessGameManager(XBGAMEPAD* pad, XBIR_REMOTE* ir)
 	}
 	else if(global_list.header.total_items == 0)
 	{
-		if(p_input->pressed(GP_BACK) || p_input->pressed(IR_BACK) || p_input->pressed(GP_A) || p_input->pressed(IR_PLAY) || p_input->pressed(IR_SELECT))
+		if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B) || p_input->pressed(IR_BACK) || p_input->pressed(GP_A) || p_input->pressed(IR_PLAY) || p_input->pressed(IR_SELECT))
 			ret = PROCESS_BACK;
 		else
 			gm_mode = MODE_NO_GAMES_FOUND;
