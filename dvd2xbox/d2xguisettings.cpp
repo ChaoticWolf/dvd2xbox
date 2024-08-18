@@ -29,6 +29,7 @@ D2Xguiset::~D2Xguiset()
 
 void D2Xguiset::BuildMenu()
 {
+	//General
 	AddMenu(SET_GENERAL,"General",true);
 	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"No");
 	AddString(SET_GENERAL,1,"Autodetect Partitions",true,1,"Yes");
@@ -38,36 +39,37 @@ void D2Xguiset::BuildMenu()
 	AddString(SET_GENERAL,3,"Enable G: Partition",false,0,"Yes");
 	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"No");
 	AddString(SET_GENERAL,4,"Enable Logfile",true,0,"Yes");
-	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"No");
-	AddString(SET_GENERAL,5,"Enable ACL processing",true,1,"Yes");
+	AddString(SET_GENERAL,5,"Enable ACL Processing",true,1,"No");
+	AddString(SET_GENERAL,5,"Enable ACL Processing",true,1,"Yes");
 	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"No");
 	AddString(SET_GENERAL,6,"Enable ACL RM/MV/EP",true,0,"Yes");
-	AddString(SET_GENERAL,7,"Enable Auto eject",true,1,"No");
-	AddString(SET_GENERAL,7,"Enable Auto eject",true,1,"Yes");
-	AddString(SET_GENERAL,8,"Enable LED control",true,0,"No");
-	AddString(SET_GENERAL,8,"Enable LED control",true,0,"Yes");	
+	AddString(SET_GENERAL,7,"Enable Auto Eject",true,1,"No");
+	AddString(SET_GENERAL,7,"Enable Auto Eject",true,1,"Yes");
+	AddString(SET_GENERAL,8,"Enable LED Control",true,0,"No");
+	AddString(SET_GENERAL,8,"Enable LED Control",true,0,"Yes");	
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"Off");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"1 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"2 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"3 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"4 min");
 	AddString(SET_GENERAL,9,"Enable Screensaver",true,0,"5 min");
-	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"No");
-	AddString(SET_GENERAL,10,"Enable Media detection",true,1,"Yes");
+	AddString(SET_GENERAL,10,"Enable Media Detection",true,1,"No");
+	AddString(SET_GENERAL,10,"Enable Media Detection",true,1,"Yes");
 	AddInt(SET_GENERAL,11,"Failed Copy Retries",true,3,0,20,1);
 	AddInt(SET_GENERAL,12,"Copy Read Retries",true,3,0,20,1);
 	AddString(SET_GENERAL,13,"Blank video files",true,0,"No");
 	AddString(SET_GENERAL,13,"Blank video files",true,0,"Yes");
-	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"No");
-	AddString(SET_GENERAL,14,"Enable unlocker",true,0,"Yes");
+	AddString(SET_GENERAL,14,"Enable Unlocker",true,0,"No");
+	AddString(SET_GENERAL,14,"Enable Unlocker",true,0,"Yes");
 	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"No");
 	AddString(SET_GENERAL,15,"Enable SmartXX RGB LED",true,0,"Yes");
 	AddString(SET_GENERAL,16,"Auto shutdown after copy",true,0,"No");
 	AddString(SET_GENERAL,16,"Auto shutdown after copy",true,0,"Yes");
 
+	//Audio
 	AddMenu(SET_AUDIO,"Audio",true);
 	AddString(SET_AUDIO,1,"Encoder",true,0,"MP3");
-	AddString(SET_AUDIO,1,"Encoder",true,0,"OggVorbis");
+	AddString(SET_AUDIO,1,"Encoder",true,0,"Ogg Vorbis");
 	AddString(SET_AUDIO,1,"Encoder",true,0,"WAV");
 	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"Low");
 	AddString(SET_AUDIO,2,"Ogg Quality",true,1,"Medium");
@@ -76,15 +78,16 @@ void D2Xguiset::BuildMenu()
 	AddString(SET_AUDIO,3,"Mode",true,0,"Joint Stereo");
 	AddInt(SET_AUDIO,4,"Bitrate",true,192,64,384,64);
 
+	//LCD
 	AddMenu(SET_LCD,"LCD",true);
 	AddString(SET_LCD,1,"Enable LCD",true,0,"No");
 	AddString(SET_LCD,1,"Enable LCD",true,0,"Yes");
 	AddString(SET_LCD,2,"Modchip",true,0,"SmartXX");
 	AddString(SET_LCD,2,"Modchip",true,0,"Xecuter 3");
 	AddString(SET_LCD,2,"Modchip",true,0,"Xenium");
-	AddString(SET_LCD,3,"Type",true,0,"LCD-KS0073");
-	AddString(SET_LCD,3,"Type",true,0,"LCD-HD44780");
-	AddString(SET_LCD,3,"Type",true,0,"VFD");
+	AddString(SET_LCD,3,"LCD Type",true,0,"LCD-KS0073");
+	AddString(SET_LCD,3,"LCD Type",true,0,"LCD-HD44780");
+	AddString(SET_LCD,3,"LCD Type",true,0,"VFD");
 	AddInt(SET_LCD,4,"Columns",true,20,6,40,1);
 	AddInt(SET_LCD,5,"Rows",true,4,1,10,1);
 	AddHex(SET_LCD,6,"Line1 Address",true,0,0,252,4);
@@ -96,7 +99,7 @@ void D2Xguiset::BuildMenu()
 	AddString(SET_LCD,12,"Enable Scrolling",true,1,"No");
 	AddString(SET_LCD,12,"Enable Scrolling",true,1,"Yes");
 
-
+	//Network
 	if(p_utils.IsEthernetConnected() == true)
 	{
 		AddMenu(SET_NETWORK,"Network",true);
@@ -115,6 +118,7 @@ void D2Xguiset::BuildMenu()
 	else
 		AddMenu(SET_NETWORK,"Network",false);
 
+	//Skins
 	if(getSkins(v_skins) == true)
 	{
 		AddMenu(SET_SKINS,"Select Skin",true);
@@ -127,6 +131,7 @@ void D2Xguiset::BuildMenu()
 	else
 		AddMenu(SET_SKINS,"Select Skin",false);
 
+	//Calibration
 	//AddMenu(SET_CALIBRATE,"Calibrate Screen",true);
 	AddMenu(SET_GUI,"GUI",true);
 	AddString(SET_GUI,1,"Enable Soften Filter",true,0,"No");
@@ -134,6 +139,7 @@ void D2Xguiset::BuildMenu()
 	AddInt(SET_GUI,2,"Set Flicker Filter",true,5,0,5,1);
 	AddString(SET_GUI,3,"Calibrate Screen",true,0," ");
 	
+	//Restore
 	AddMenu(SET_RESTORE,"Restore Defaults",true);
 
 	
@@ -334,6 +340,7 @@ int D2Xguiset::ExecuteSettings()
 
 void D2Xguiset::AnnounceSettings()
 {
+	//General
 	g_d2xSettings.autodetectHDD = GetIndexByItem(SET_GENERAL,1);
 	g_d2xSettings.useF = GetIndexByItem(SET_GENERAL,2);
 	g_d2xSettings.useG = GetIndexByItem(SET_GENERAL,3);
@@ -351,6 +358,7 @@ void D2Xguiset::AnnounceSettings()
 	g_d2xSettings.enableSmartXXRGB = GetIndexByItem(SET_GENERAL,15);
 	g_d2xSettings.enableAutoShutdown = GetIndexByItem(SET_GENERAL,16);
 
+	//Audio
 	if(GetIndexByItem(SET_AUDIO,1) == 0)
 		g_d2xSettings.cdda_encoder = MP3LAME;
 	else if(GetIndexByItem(SET_AUDIO,1) == 1)
@@ -367,6 +375,7 @@ void D2Xguiset::AnnounceSettings()
 	g_d2xSettings.mp3_mode = GetIndexByItem(SET_AUDIO,3);
 	g_d2xSettings.mp3_bitrate = GetIntValueByItem(SET_AUDIO,4);
 
+	//LCD
 	g_d2xSettings.m_bLCDUsed = GetIndexByItem(SET_LCD,1);
 	if(GetIndexByItem(SET_LCD,2) == 2)
 		g_d2xSettings.m_iLCDModChip = MODCHIP_XENIUM;
@@ -386,6 +395,7 @@ void D2Xguiset::AnnounceSettings()
 	g_d2xSettings.m_iContrast = GetIntValueByItem(SET_LCD,11);
 	g_d2xSettings.enableLCDScrolling = GetIndexByItem(SET_LCD,12);
 
+	//Network
 	g_d2xSettings.network_enabled = GetIndexByItem(SET_NETWORK,1);
 	g_d2xSettings.network_assignment = GetIndexByItem(SET_NETWORK,2);
 	g_d2xSettings.ftpd_enabled = GetIndexByItem(SET_NETWORK,3);
