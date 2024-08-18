@@ -732,8 +732,10 @@ int D2Xguiset::Process(XBGAMEPAD* pad,XBIR_REMOTE* ir)
 					ret = ExecuteSettings();
 			}
 		}
-		else
-		{
+	}
+	// increase value index if we're in a submenu and item is active
+	if(p_input->pressed(GP_DPAD_RIGHT) || p_input->pressed(IR_RIGHT))
+	{
 			if(SetMenu[s_item.menuID].items[i].active == true)
 			{
 				// we're in a sub menu, increase index by one
@@ -749,10 +751,8 @@ int D2Xguiset::Process(XBGAMEPAD* pad,XBIR_REMOTE* ir)
 				ret = ExecuteSettings();
 			}
 		}
-	}
-
 	// decrease value index if we're in a submenu and item is active
-	if(p_input->pressed(GP_B)||p_input->pressed(IR_LEFT))
+	if(p_input->pressed(GP_DPAD_LEFT)||p_input->pressed(IR_LEFT))
 	{
 		if((s_item.itemID != 0) && (SetMenu[s_item.menuID].items[i].active == true))
 		{
@@ -768,7 +768,7 @@ int D2Xguiset::Process(XBGAMEPAD* pad,XBIR_REMOTE* ir)
 		}
 	}
 
-	if(p_input->pressed(GP_BACK))
+	if(p_input->pressed(GP_BACK) || p_input->pressed(GP_B))
 	{
 		if(s_item.itemID == 0)
 		{
